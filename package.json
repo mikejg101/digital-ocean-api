@@ -1,19 +1,69 @@
 {
-  "name": "digital-ocean-api",
-  "version": "0.0.2",
-  "description": "",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/tsc",
-    "prepublish": "./node_modules/.bin/tsc"
-  },
-  "keywords": [],
-  "author": "Michael Goodwin",
-  "license": "ISC",
-  "dependencies": {},
-  "devDependencies": {
-    "typescript": "^3.9.2"
-  }
+    "name": "digital-ocean-api",
+    "version": "0.0.11",
+    "description": "A nice greeter",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "lib/**/*"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mikejg101/digital-ocean-api.git"
+    },
+    "scripts": {
+        "test": "./node_modules/.bin/jest",
+        "build": "./node_modules/.bin/tsc",
+        "format": "./node_modules/.bin/prettier '*/**/*.{js,ts,tsx}' --write",
+        "lint": "./node_modules/.bin/eslint '*/**/*.{js,ts,tsx}' --fix",
+        "prepare": "npm run build",
+        "prepublishOnly": "npm test && npm run lint",
+        "preversion": "npm run lint",
+        "version": "npm run format && git add -A src",
+        "postversion": "git push && git push --tags"
+    },
+    "keywords": [
+        "digital",
+        "ocean",
+        "api"
+    ],
+    "author": "Michael Goodwin",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.19.2",
+        "camelcase": "^6.0.0",
+        "jest": "^26.0.1"
+    },
+    "devDependencies": {
+        "@types/jest": "^25.2.2",
+        "@typescript-eslint/eslint-plugin": "^2.33.0",
+        "@typescript-eslint/parser": "^2.33.0",
+        "eslint": "^7.0.0",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-prettier": "^3.1.3",
+        "husky": "^4.2.5",
+        "jest-mock-axios": "^4.0.0",
+        "lint-staged": "^10.2.2",
+        "prettier": "^2.0.5",
+        "ts-jest": "^26.0.0",
+        "ts-node": "^8.10.1",
+        "typescript": "^3.9.2"
+    },
+    "jest": {
+        "preset": "ts-jest",
+        "testEnvironment": "node",
+        "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.[jt]sx?$"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,ts,tsx}": [
+            "npm run format",
+            "npm run lint",
+            "npm run test"
+        ]
+    }
 }
