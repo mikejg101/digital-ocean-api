@@ -1,6 +1,6 @@
 {
     "name": "digital-ocean-api-node",
-    "version": "0.0.11",
+    "version": "0.0.12",
     "description": "A package for interacting with the digital ocean api",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
