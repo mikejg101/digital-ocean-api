@@ -1,0 +1,3 @@
+[![Codecov Coverage](https://img.shields.io/codecov/c/github/mikejg101/digital-ocean-api/coverage.svg?style=flat-square)](https://codecov.io/gh/mikejg101/digital-ocean-api/) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![Codecov Coverage](https://travis-ci.com/mikejg101/digital-ocean-api.svg?branch=master) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![Codecov Coverage](https://img.shields.io/david/mikejg101/digital-ocean-api)
+
+## npm module for digital ocean api
