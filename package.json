@@ -30,7 +30,7 @@
     "author": "Michael Goodwin",
     "license": "ISC",
     "dependencies": {
-        "axios": "^0.19.2",
+        "axios": "^0.21.1",
         "camelcase": "^6.0.0",
         "jest": "^26.0.1"
     },
