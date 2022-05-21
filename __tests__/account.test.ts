@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/camelcase */
 import { createDigitalOceanApi } from '../src/create-digital-ocean-api';
 import mockAxios from 'jest-mock-axios';
-import camelCaseObjectProperties from '../src/camel-case-object-properties';
+import camelCaseObjectProperties from '../src/utils/camel-case-object-properties';
 
 const mockAccountResponse = {
     droplet_limit: 25,

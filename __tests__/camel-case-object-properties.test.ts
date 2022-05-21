@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/camelcase */
-import camelCaseObjectProperties from '../src/camel-case-object-properties';
+import camelCaseObjectProperties from '../src/utils/camel-case-object-properties';
 
 const mockPreCamelCaseObject = {
     some_var: 1,
