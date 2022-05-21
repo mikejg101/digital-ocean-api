@@ -1,34 +1,18 @@
 import { DigitalOceanApi } from './models/digital-ocean-api';
 import { Account } from './models/account';
-import axios from 'axios';
-import camelCaseObjectProperties from './camel-case-object-properties';
-
-enum MessageType {
-    GET = 'GET',
-    PUT = 'PUT',
-    POST = 'POST',
-    DELETE = 'DELETE',
-}
-
-interface HeaderObject {
-    'Content-Type': string;
-    Authorization: string;
-}
-
-interface RequestConfig {
-    method: MessageType;
-    headers: HeaderObject;
-}
+import axios, { AxiosRequestConfig, AxiosRequestHeaders } from 'axios';
+import camelCaseObjectProperties from './utils/camel-case-object-properties';
+import { MessageType } from './models/message-type';
 
 export const createDigitalOceanApi = (apiKey: string): DigitalOceanApi => {
     const baseUrl = 'https://api.digitalocean.com/v2';
 
-    const createHeaders = (): HeaderObject => ({
+    const createHeaders = (): AxiosRequestHeaders => ({
         'Content-Type': 'application/json',
         Authorization: `Bearer ${apiKey}`,
     });
 
-    const createConfig = (messageType: MessageType): RequestConfig => ({
+    const createConfig = (messageType: MessageType): AxiosRequestConfig => ({
         method: messageType,
         headers: createHeaders(),
     });
